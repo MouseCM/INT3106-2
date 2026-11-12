@@ -7,7 +7,7 @@ sig Book {
     borrowed: lone Member
 }
 
-sig Library {
+one sig Library {
     book: set Book,
     member: set Member,
     librarian: one Member
