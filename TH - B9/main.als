@@ -25,3 +25,18 @@ fact NoTwoDirectoriesAreMutualParents {
         d1 in d2.parent and d2 in d1.parent
 }
 
+assert EveryFileHasParent {
+    all f: File | one f.parent
+}
+
+
+assert NoThreeDifferentDirectoriesCycle {
+    no disj d1, d2, d3: Dir |
+        d2 in d1.parent and
+        d3 in d2.parent and
+        d1 in d3.parent
+}
+
+assert EveryNonRootDirectoryHasRootAsParent {
+    all d: Dir - Root | d.parent = Root
+}
