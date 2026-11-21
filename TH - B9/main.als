@@ -40,3 +40,7 @@ assert NoThreeDifferentDirectoriesCycle {
 assert EveryNonRootDirectoryHasRootAsParent {
     all d: Dir - Root | d.parent = Root
 }
+
+fact DirectoryParentRelationIsAcyclic {
+    no d: Dir | d in d.^parent
+}
