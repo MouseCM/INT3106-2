@@ -44,3 +44,16 @@ assert EveryNonRootDirectoryHasRootAsParent {
 fact DirectoryParentRelationIsAcyclic {
     no d: Dir | d in d.^parent
 }
+
+
+check EveryFileHasParent for 4
+check NoThreeDifferentDirectoriesCycle for 4
+check EveryNonRootDirectoryHasRootAsParent for 4
+
+check EveryFileHasParent for 5
+check NoThreeDifferentDirectoriesCycle for 5
+check EveryNonRootDirectoryHasRootAsParent for 5
+
+check EveryFileHasParent for 6
+check NoThreeDifferentDirectoriesCycle for 6
+check EveryNonRootDirectoryHasRootAsParent for 6
